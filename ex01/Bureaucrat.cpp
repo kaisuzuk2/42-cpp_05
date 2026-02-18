@@ -1,0 +1,63 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
+/*   Updated: 2026/02/18 12:06:39 by kaisuzuk         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Bureaucrat.hpp"
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
+
+
+Bureaucrat::Bureaucrat():  _name("Default"), _grade(75) {}
+
+Bureaucrat::Bureaucrat(const std::string &name, int grade): _name(name), _grade(grade) {
+	checkGrade(grade);
+}
+
+Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &other): _name(other._name), _grade(other._grade) {}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
+	if (this != &other) {
+		this->_grade = other._grade;
+	}
+	return (*this);
+}
+
+const std::string Bureaucrat::getName() const {
+	return (this->_name);
+}
+
+int Bureaucrat::getGrade() const {
+	return (this->_grade);
+}
+
+void Bureaucrat::incGrade() {
+	checkGrade(this->_grade - 1);
+	this->_grade--;
+}
+
+void Bureaucrat::decGrade() {
+	checkGrade(this->_grade + 1);
+	this->_grade++;
+}
+
+void Bureaucrat::checkGrade(int grade) const {
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
+}
+
+std::ostream &operator<<(std::ostream &os ,const Bureaucrat &b) {
+	os << b.getName() << ", bureaucrat grade " << b.getGrade() << ".";
+	return (os);
+}
