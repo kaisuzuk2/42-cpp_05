@@ -6,14 +6,13 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/18 12:06:39 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 09:04:43 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
-
 
 Bureaucrat::Bureaucrat():  _name("Default"), _grade(75) {}
 
@@ -32,7 +31,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	return (*this);
 }
 
-const std::string Bureaucrat::getName() const {
+const std::string &Bureaucrat::getName() const {
 	return (this->_name);
 }
 
@@ -55,6 +54,15 @@ void Bureaucrat::checkGrade(int grade) const {
 		throw GradeTooHighException();
 	if (grade > 150)
 		throw GradeTooLowException();
+}
+
+void Bureaucrat::signForm(Form &f) const {
+	try {
+		f.beSigned(*this);
+		std::cout << this->getName() << " signed " << f.getName() << std::endl; 
+	} catch (std::exception &e) {
+		std::cout << this->getName() << " couldn’t sign " << f.getName() << " because " << e.what() << "." << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os ,const Bureaucrat &b) {

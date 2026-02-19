@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:09 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/18 14:05:42 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 08:36:17 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -27,10 +30,11 @@ class Bureaucrat {
 		~Bureaucrat();
 		Bureaucrat(const Bureaucrat &other);
 		Bureaucrat &operator=(const Bureaucrat &other);
-		const std::string getName() const ;
+		const std::string &getName() const ;
 		int getGrade() const ;
 		void incGrade();
 		void decGrade();
+		void signForm(Form &) const ;
 }; 
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &);

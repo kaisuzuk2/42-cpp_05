@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/18 14:02:21 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 08:53:30 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Form::Form(): _name("unknown"), _isSigned(false), _gradeToSign(150), _gradeToExe
 
 Form::Form(const std::string &name, bool isSigned, int gradeToSign, int gradeToExecute): 
 	_name(name), _isSigned(isSigned), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
+		checkGrade(this->_gradeToSign);
+		checkGrade(this->_gradeToExecute);
+}
+
+Form::Form(const std::string &name, int gradeToSign, int gradeToExecute): 
+	_name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute){
 		checkGrade(this->_gradeToSign);
 		checkGrade(this->_gradeToExecute);
 }
@@ -33,26 +39,33 @@ Form &Form::operator=(const Form &other) {
 
 Form::~Form() {}
 
-const std::string Form::getName() const {
+const std::string &Form::getName() const {
 	return (this->_name);
 }
 
-const bool Form::getIsSigned() const {
+bool Form::getIsSigned() const {
 	return (this->_isSigned);
 }
 
-const int Form::getGradeToSign() const {
+int Form::getGradeToSign() const {
 	return (this->_gradeToSign);
 }
 
-const int Form::getGradeToExecute() const {
+int Form::getGradeToExecute() const {
 	return (this->_gradeToExecute);
 }
 
 void Form::checkGrade(int grade) const {
 	if (grade < 1)
 		throw GradeTooHighException();
-	else
+	if (grade > 150)
+		throw GradeTooLowException();
+}
+
+void Form::beSigned(const Bureaucrat &b) {
+	if (this->_gradeToSign >= b.getGrade())
+		this->_isSigned = true;
+	else 
 		throw GradeTooLowException();
 }
 

@@ -6,14 +6,13 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/18 12:06:39 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 08:06:30 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
-
 
 Bureaucrat::Bureaucrat():  _name("Default"), _grade(75) {}
 
@@ -32,7 +31,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 	return (*this);
 }
 
-const std::string Bureaucrat::getName() const {
+const std::string &Bureaucrat::getName() const {
 	return (this->_name);
 }
 
