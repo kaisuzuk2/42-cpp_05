@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 10:46:36 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 12:08:48 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 13:52:02 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 class ShrubberyCreationForm: public AForm {
 	private:
+		static const int kSignGrade = 145;
+		static const int kExecGrade = 137;
 		void executeAction() const;
 	public:
 		ShrubberyCreationForm();

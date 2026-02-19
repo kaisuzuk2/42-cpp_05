@@ -6,15 +6,15 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 12:06:17 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 13:03:07 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 13:51:50 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", "Default target", 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm(): AForm("RobotomyRequestForm", "Default target", kSignGrade, kExecGrade) {}
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("RobotomyRequestForm", target, 145, 137) {}
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target): AForm("RobotomyRequestForm", target, kSignGrade, kExecGrade) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other): AForm(other) {
 	*this = other;

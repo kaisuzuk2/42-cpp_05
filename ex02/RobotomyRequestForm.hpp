@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 12:06:15 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 13:03:01 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 13:51:30 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 
 class RobotomyRequestForm: public AForm {
 	private:
+		static const int kSignGrade = 72;
+		static const int kExecGrade = 45;
 		void executeAction() const;
 	public:
 		RobotomyRequestForm();

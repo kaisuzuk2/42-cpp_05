@@ -6,15 +6,15 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 10:46:39 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 12:05:21 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/19 13:52:20 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", "Default target", 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(): AForm("ShrubberyCreationForm", "Default target", kSignGrade, kExecGrade) {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string &target): AForm("ShrubberyCreationForm", target, 145, 137) {}
+ShrubberyCreationForm::ShrubberyCreationForm(std::string &target): AForm("ShrubberyCreationForm", target, kSignGrade, kExecGrade) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other): AForm(other) {
 	*this = other;
