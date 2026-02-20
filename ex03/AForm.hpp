@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:20 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 10:12:36 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 12:23:33 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class AForm {
 		AForm(const std::string &name, const std::string &target, int gradeToSign, int gradeToExecute);
 		AForm(const AForm &other);
 		AForm &operator=(const AForm &other);
-		~AForm();
+		virtual ~AForm();
 		const std::string &getName() const;
 		const std::string &getTarget() const;
 		bool getIsSigned() const;
