@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:09 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 13:29:56 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 10:14:11 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <string>
 #include <iostream>
 #include "AForm.hpp"
+#include "GradeTooHighException.hpp"
+#include "GradeTooLowException.hpp"
 
 class AForm;
 

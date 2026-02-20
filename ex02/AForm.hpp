@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:20 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 09:22:17 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 10:12:36 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include "GradeTooHighException.hpp"
 #include "GradeTooLowException.hpp"
 #include "FormNotSignedException.hpp"
+#include "AlreadySignedException.hpp"
 
 class Bureaucrat;
 

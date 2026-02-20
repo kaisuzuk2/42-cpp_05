@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 09:22:22 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 10:12:47 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void AForm::checkGrade(int grade) const {
 
 void AForm::beSigned(const Bureaucrat &b) {
 	if (this->_isSigned)
-		throw std::runtime_error("already signed");
+		throw AlreadySignedException();
 	if (this->_gradeToSign >= b.getGrade())
 		this->_isSigned = true;
 	else 

@@ -6,14 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 13:35:01 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 10:11:56 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
-#include "FormNotSignedException.hpp"
 
 Bureaucrat::Bureaucrat():  _name("Default"), _grade(75) {}
 

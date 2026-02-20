@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/19 13:39:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/20 08:13:59 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/20 10:13:12 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS	=	Bureaucrat.cpp \
 			GradeTooHighException.cpp \
 			GradeTooLowException.cpp \
 			FormNotSignedException.cpp \
+			AlreadySignedException.cpp \
 			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
 			ShrubberyCreationForm.cpp \
