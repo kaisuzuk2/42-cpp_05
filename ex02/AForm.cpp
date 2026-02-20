@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 11:48:26 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 09:22:22 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ AForm::AForm(const std::string &name, const std::string &target, int gradeToSign
 		checkGrade(this->_gradeToExecute);
 }
 
-AForm::AForm(const AForm &other): _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {
+AForm::AForm(const AForm &other): _name(other._name), _target(other._target),  _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {
 	*this = other;
 }
 
@@ -67,6 +67,8 @@ void AForm::checkGrade(int grade) const {
 }
 
 void AForm::beSigned(const Bureaucrat &b) {
+	if (this->_isSigned)
+		throw std::runtime_error("already signed");
 	if (this->_gradeToSign >= b.getGrade())
 		this->_isSigned = true;
 	else 
@@ -84,6 +86,7 @@ void AForm::execute(const Bureaucrat &b) const {
 std::ostream &operator<<(std::ostream &os, const AForm &f) {
 	os << "---------- Form Information ----------" << std::endl;
 	os << std::left << std::setw(20) << "Name" << ": " << f.getName() << std::endl;
+	os << std::left << std::setw(20) << "Target" << ": " << f.getTarget() << std::endl;
 	os << std::left << std::setw(20) << "Signed" << ": " << (f.getIsSigned() ? "Yes" : "No") << std::endl;
 	os << std::left << std::setw(20) << "Grade to sign" << ": " << f.getGradeToSign() << std::endl;
 	os << std::left << std::setw(20) << "Grade to execute" << ": " << f.getGradeToExecute() << std::endl;

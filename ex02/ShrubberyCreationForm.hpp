@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 10:46:36 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 13:52:02 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/20 08:13:33 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ShrubberyCreationForm: public AForm {
 		void executeAction() const;
 	public:
 		ShrubberyCreationForm();
-		ShrubberyCreationForm(std::string &);
+		ShrubberyCreationForm(const std::string &);
 		ShrubberyCreationForm(const ShrubberyCreationForm &);	
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &);
 		~ShrubberyCreationForm();

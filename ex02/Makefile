@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/19 13:39:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/19 13:40:11 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/20 08:13:59 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS	=	Bureaucrat.cpp \
 			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
 			ShrubberyCreationForm.cpp \
-			Form.cpp \
+			AForm.cpp \
 			main.cpp
 OBJS	=	$(SRCS:%.cpp=%.o)
 
