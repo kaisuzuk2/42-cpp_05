@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:58:45 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/27 08:08:29 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/27 08:09:43 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ int main(void) {
 		Intern someRandomIntern;
 		AForm* rrf;
 		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-	
-		std::cout << *rrf << std::endl;
-		delete rrf;
+		if (rrf) {
+			std::cout << *rrf << std::endl;
+			delete rrf;
+		}
 	}
 
 	{

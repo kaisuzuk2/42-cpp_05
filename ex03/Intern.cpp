@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 10:18:20 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 13:02:01 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/27 08:10:27 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ AForm *Intern::makeForm(const std::string &form, const std::string &target) cons
 	for (int i = 0; i < size; i++)
 	{
 		if (form == table[i].formName) {
-			std::cout << "Intern creates " << table[i].formName << "." << std::endl;
+			std::cout << "Intern creates " << table[i].formName << std::endl;
 			return ((this->*table[i].creator)(target));
 		}
 	}
