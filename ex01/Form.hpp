@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:20 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 08:40:56 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 11:58:32 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include <iostream>
 #include <iomanip>
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 class Bureaucrat;
 
@@ -36,6 +34,17 @@ class Form {
 		Form(const Form &other);
 		Form &operator=(const Form &other);
 		~Form();
+
+		class GradeTooHighException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
+		class GradeTooLowException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
 		const std::string &getName() const;
 		bool getIsSigned() const;
 		int getGradeToSign() const;

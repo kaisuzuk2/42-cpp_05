@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 11:57:30 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/18 13:02:34 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/26 11:48:25 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ CXX		=	c++
 FLAG	=	-Wall -Werror -Wextra -std=c++98 
 
 SRCS	=	Bureaucrat.cpp \
-			GradeTooHighException.cpp \
-			GradeTooLowException.cpp \
 			main.cpp
 OBJS	=	$(SRCS:%.cpp=%.o)
 

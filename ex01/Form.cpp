@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 08:53:30 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:01:10 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ Form &Form::operator=(const Form &other) {
 
 Form::~Form() {}
 
+const char *Form::GradeTooHighException::what() const throw() {
+	return ("Form: grade too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw() {
+	return ("Form: grade too low");
+}
+
 const std::string &Form::getName() const {
 	return (this->_name);
 }
@@ -57,9 +65,9 @@ int Form::getGradeToExecute() const {
 
 void Form::checkGrade(int grade) const {
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (grade > 150)
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 void Form::beSigned(const Bureaucrat &b) {

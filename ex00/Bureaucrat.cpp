@@ -6,13 +6,11 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 08:06:30 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 11:49:32 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
 
 Bureaucrat::Bureaucrat():  _name("Default"), _grade(75) {}
 
@@ -29,6 +27,14 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 		this->_grade = other._grade;
 	}
 	return (*this);
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Bureaucrat: grade too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("Bureaucrat: grade too low");
 }
 
 const std::string &Bureaucrat::getName() const {
@@ -51,9 +57,9 @@ void Bureaucrat::decGrade() {
 
 void Bureaucrat::checkGrade(int grade) const {
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
-		throw GradeTooLowException();
+		throw Bureaucrat::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &os ,const Bureaucrat &b) {
