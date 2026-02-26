@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/19 13:39:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/20 10:13:12 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/26 12:12:26 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,6 @@ CXX		=	c++
 FLAG	=	-Wall -Werror -Wextra -std=c++98 -pedantic
 
 SRCS	=	Bureaucrat.cpp \
-			GradeTooHighException.cpp \
-			GradeTooLowException.cpp \
-			FormNotSignedException.cpp \
-			AlreadySignedException.cpp \
 			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
 			ShrubberyCreationForm.cpp \

@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 08:25:14 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 10:11:56 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:05:43 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other) {
 		this->_grade = other._grade;
 	}
 	return (*this);
+}
+
+const char *Bureaucrat::GradeTooHighException::what() const throw() {
+	return ("Bureaucrat: grade too high");
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw() {
+	return ("Bureaucrat: grade too low");
 }
 
 const std::string &Bureaucrat::getName() const {

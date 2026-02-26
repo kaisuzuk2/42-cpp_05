@@ -6,7 +6,7 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/19 13:39:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/20 12:33:37 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/26 12:22:28 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,6 @@ FLAG	=	-Wall -Werror -Wextra -std=c++98 -pedantic -g -fsanitize=address
 
 SRCS	=	Bureaucrat.cpp \
 			Intern.cpp \
-			GradeTooHighException.cpp \
-			GradeTooLowException.cpp \
-			FormNotSignedException.cpp \
-			AlreadySignedException.cpp \
 			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
 			ShrubberyCreationForm.cpp \

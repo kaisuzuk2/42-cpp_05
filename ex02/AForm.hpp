@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:20 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 12:23:46 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:09:19 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@
 #include <iostream>
 #include <iomanip>
 #include "Bureaucrat.hpp"
-#include "GradeTooHighException.hpp"
-#include "GradeTooLowException.hpp"
-#include "FormNotSignedException.hpp"
-#include "AlreadySignedException.hpp"
 
 class Bureaucrat;
 
@@ -41,6 +37,27 @@ class AForm {
 		AForm(const AForm &other);
 		AForm &operator=(const AForm &other);
 		virtual ~AForm();
+
+		class GradeTooHighException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
+		class GradeTooLowException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
+		class FormNotSignedException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
+		class AlreadySignedException: public std::exception {
+			public:
+				const char *what() const throw();
+		};
+
 		const std::string &getName() const;
 		const std::string &getTarget() const;
 		bool getIsSigned() const;

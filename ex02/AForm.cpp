@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 10:12:47 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:12:02 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,22 @@ AForm &AForm::operator=(const AForm &other) {
 
 AForm::~AForm() {}
 
+const char *AForm::GradeTooHighException::what() const throw() {
+	return ("Form: grade too high");
+}
+
+const char *AForm::GradeTooLowException::what() const throw() {
+	return ("Form: grade too low");
+}
+
+const char *AForm::FormNotSignedException::what() const throw() {
+	return ("Form: form is not signed");
+}
+
+const char *AForm::AlreadySignedException::what() const throw() {
+	return ("Form: already signed");
+}
+
 const std::string &AForm::getName() const {
 	return (this->_name);
 }
@@ -61,25 +77,25 @@ int AForm::getGradeToExecute() const {
 
 void AForm::checkGrade(int grade) const {
 	if (grade < 1)
-		throw GradeTooHighException();
+		throw AForm::GradeTooHighException();
 	if (grade > 150)
-		throw GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
 void AForm::beSigned(const Bureaucrat &b) {
 	if (this->_isSigned)
-		throw AlreadySignedException();
+		throw AForm::AlreadySignedException();
 	if (this->_gradeToSign >= b.getGrade())
 		this->_isSigned = true;
 	else 
-		throw GradeTooLowException();
+		throw AForm::GradeTooLowException();
 }
 
 void AForm::execute(const Bureaucrat &b) const {
 	if (!this->_isSigned)
-		throw FormNotSignedException();
+		throw AForm::FormNotSignedException();
 	if (this->_gradeToExecute <  b.getGrade())
-		throw GradeTooLowException();
+		throw AForm::GradeTooLowException();
 	executeAction();
 }
 

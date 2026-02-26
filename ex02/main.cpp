@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 13:35:29 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 09:42:38 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:16:49 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ int main(void) {
 	}
 
 	{
-		header("2) sign tests");
+		header("5) sign tests");
 		Bureaucrat shrubSign("Shurb", 145);
 		Bureaucrat roboSign("robo", 72);
 		Bureaucrat presiSign("presi", 25);
@@ -147,7 +147,7 @@ int main(void) {
 	}
 	
 	{
-		header("3) Execute tests");
+		header("6) Execute tests");
 		Bureaucrat shrubExec("shrub", 137);
 		Bureaucrat roboExec("robo", 45);
 		Bureaucrat presiExec("presi", 5);
@@ -158,11 +158,15 @@ int main(void) {
 		shrubExec.executeForm(shrub); // success -> create file
 		std::cout << std::endl;
 
+		std::cout << "----------" << std::endl;
+
 		// robo: exec 45
 		mid.executeForm(robo); // fail (too low)
 		std::cout << std::endl;
 		roboExec.executeForm(robo); // success (50%)
 		std::cout << std::endl;
+
+		std::cout << "----------" << std::endl;
 
 		// presi: exec 5
 		mid.executeForm(presi); // fail ( too low)
