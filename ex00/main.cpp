@@ -6,18 +6,22 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 10:43:58 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/26 10:52:12 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 10:55:30 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include <iostream>
 
+void header(int id, const std::string &title) {
+	std::cout << "\n========== " << id << ") " << title << " ==========" << std::endl;
+} 
+
 int main(void) {
 	{
 		Bureaucrat defo;
 		
-		std::cout << "========== Default test ==========" << std::endl;
+		header(0, "Default test");
 		std::cout << defo << std::endl;
 
 		std::cout << "*** increment" << std::endl;
@@ -34,7 +38,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== Copy constructor test ==========" << std::endl;
+		header(1, "Copy constructor test");
 		Bureaucrat origin("copy", 10);
 		Bureaucrat cpy(origin);
 		
@@ -45,7 +49,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== Copy assignment constructor test ==========" << std::endl;
+		header(2, "Copy assginment test");
 		Bureaucrat origin("origin", 10);
 		Bureaucrat cpy("copy", 149);
 		std::cout << origin << std::endl;
@@ -61,8 +65,8 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== High constructor test ==========" << std::endl;
-
+		header(3, "High constructor test");
+		
 		try {
 			Bureaucrat high("HIGH", 0);
 			std::cout << "This line should NOT be printed." << std::endl;
@@ -75,8 +79,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========= Low constructor test ==========" << std::endl;
-
+		header(4, "Low constructor test");
 		try {
 			Bureaucrat low("Low", 151);
 			std::cout << "This line should NOT be printed." << std::endl;
@@ -89,8 +92,8 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
+		header(5, "incGrade test");
 		Bureaucrat high("HIGH", 3);
-		std::cout << "========== High test ==========" << std::endl;
 		std::cout << high << std::endl;
 
 		std::cout << "*** increment grade" << std::endl;
@@ -108,8 +111,8 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
+		header(6, "decGrade test");
 		Bureaucrat low("Low", 147);
-		std::cout << "========== low test ==========" << std::endl;
 		std::cout << low << std::endl;
 
 		std::cout << "*** decrement grade" << std::endl;
