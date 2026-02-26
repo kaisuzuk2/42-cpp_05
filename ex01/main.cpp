@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/19 08:38:15 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/19 09:12:03 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 10:59:51 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 #include "Form.hpp"
 #include <iostream>
 
+void header(int id, const std::string &title) {
+	std::cout << "\n========== " << id << ") " << title << " ==========" << std::endl;
+} 
+
 int main(void) {
 	{
-		std::cout << "========== Form default constructor ==========" << std::endl;
+		header(0, "Form Default constructor test");
 		Form defo;
 		std::cout << defo << std::endl;
 	}
@@ -24,7 +28,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== argument constructor ==========" << std::endl;
+		header(1, "argument constructor test");
 		std::cout << "***default" << std::endl;
 		Form a("Form a", false, 75, 75);
 		std::cout << a << std::endl;
@@ -57,7 +61,7 @@ int main(void) {
 	
 	std::cout << std::endl;
 	{
-		std::cout << "========== Form copy constructor ==========" << std::endl;
+		header(2, "Form copy constructor test");
 		Form a("Form a", 10, 20);
 		Form b(a);
 
@@ -68,7 +72,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== copy asignment ==========" << std::endl;
+		header(3, "copy asginment test");
 		Form a("Form a", 30, 40);
 		Form b("Form b", true, 30, 40);
 		
@@ -80,7 +84,7 @@ int main(void) {
 	std::cout << std::endl;
 
 	{
-		std::cout << "========== ①sign test <success> ==========" << std::endl;
+		header(4, "sign test <success>");
 		try {
 			Form a("Form a", 10, 10);
 			Bureaucrat boss("Boss", 1);
@@ -95,7 +99,7 @@ int main(void) {
 	}
 
 	{
-		std::cout << "========== ②sign test <success> ==========" << std::endl;
+		header(5, "sign test <success>");
 		try {
 			Form a("Form a", 10, 10);
 			Bureaucrat b("b", 10);
@@ -110,7 +114,7 @@ int main(void) {
 	}
 
 	{
-		std::cout << "========== ③sign test <failue> ==========" << std::endl;
+		header(6, "sign test <failue>");
 		try {
 			Form a("Form a", 10, 10);
 			Bureaucrat b("b", 11);
