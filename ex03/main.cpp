@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/20 11:58:45 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/20 13:07:38 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/27 08:08:29 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,18 @@ void header(const std::string &title) {
 
 int main(void) {
 	Intern intern;
+	{
+		header("0) PDF");
+		Intern someRandomIntern;
+		AForm* rrf;
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	
+		std::cout << *rrf << std::endl;
+		delete rrf;
+	}
 
 	{
-		header("0) success test");
+		header("1) success test");
 		try {
 			AForm *f1 = intern.makeForm("shrubbery creation", "target");
 			if (f1) {
@@ -44,7 +53,7 @@ int main(void) {
 	}
 
 	{
-		header("1) fail test");
+		header("2) fail test");
 		try {
 			AForm *f1 = intern.makeForm("noexist", "target");
 			if (f1) {

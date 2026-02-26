@@ -6,7 +6,7 @@
 /*   By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 13:09:23 by kaisuzuk          #+#    #+#             */
-/*   Updated: 2026/02/26 12:01:10 by kaisuzuk         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:53:19 by kaisuzuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void Form::beSigned(const Bureaucrat &b) {
 	if (this->_gradeToSign >= b.getGrade())
 		this->_isSigned = true;
 	else 
-		throw GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &os, const Form &f) {

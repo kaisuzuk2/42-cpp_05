@@ -6,14 +6,14 @@
 #    By: kaisuzuk <kaisuzuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/19 13:39:13 by kaisuzuk          #+#    #+#              #
-#    Updated: 2026/02/26 12:22:28 by kaisuzuk         ###   ########.fr        #
+#    Updated: 2026/02/27 08:07:16 by kaisuzuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME	=	bureaucrat
 CXX		=	c++
-FLAG	=	-Wall -Werror -Wextra -std=c++98 -pedantic -g -fsanitize=address
+FLAG	=	-Wall -Werror -Wextra -std=c++98
 
 SRCS	=	Bureaucrat.cpp \
 			Intern.cpp \
